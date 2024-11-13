@@ -11,11 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.97",
     "express": "^4.21.1",
     "express-async-errors": "^3.1.1",
     "express-validator": "^7.2.0",
     "glob": "^11.0.0",
     "inflight": "^1.0.6",
+    "mongoose": "^8.8.1",
     "rimraf": "^6.0.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
