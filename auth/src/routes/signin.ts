@@ -50,7 +50,7 @@ router.post('/api/users/signin',
          jwt: userJwt
       };
 
-      res.status(201).send(existingUser);
+      res.status(200).send(existingUser);
    }
 )
 
