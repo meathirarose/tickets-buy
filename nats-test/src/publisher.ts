@@ -1,6 +1,6 @@
 import nats from 'node-nats-streaming';
 
-console.clear();
+console.clear(); 
 
 const stan = nats.connect('ticketing', 'asdf', {
     url: 'http://localhost:4222'
