@@ -19,6 +19,7 @@ class NatsWrapper {
                 resolve();
             });
             this.client.on('error', (err) => {
+                console.log(err)
                 reject(err);
             });
         });

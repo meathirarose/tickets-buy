@@ -19,5 +19,5 @@ stan.on('connect', () => {
     new TicketCreatedListner(stan).listen();
 });
 
-process.on('SIGINT', () => stan.close());
-process.on('SIGTERM', () => stan.close());
+stan.on('SIGINT', () => stan.close());
+stan.on('SIGTERM', () => stan.close());
