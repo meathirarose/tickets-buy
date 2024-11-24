@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@arjtickets/common": "^1.0.14",
+    "@arjtickets/common": "^1.0.15",
     "@types/bull": "^4.10.4",
     "bull": "^4.16.4",
     "glob": "^11.0.0",
