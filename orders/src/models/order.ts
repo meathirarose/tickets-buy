@@ -1,6 +1,7 @@
 import { OrderStatus } from "@arjtickets/common";
 import mongoose from "mongoose";
 import { TicketDoc } from "./ticket";
+import { updateIfCurrentPlugin } from "mongoose-update-if-current";
 
 export { OrderStatus };
 
@@ -16,7 +17,8 @@ interface OrderDoc extends mongoose.Document {
     userId: string,
     status: OrderStatus,
     expiresAt: Date,
-    ticket: TicketDoc
+    ticket: TicketDoc,
+    version: number
 }
 
 //properties that a User Model has
@@ -51,6 +53,9 @@ const orderSchema =new mongoose.Schema({
         }
     }
 });
+
+orderSchema.set('versionKey', 'version');
+orderSchema.plugin(updateIfCurrentPlugin);
 
 orderSchema.statics.build = (attrs: OrderAttrs) => {
     return new Order(attrs);

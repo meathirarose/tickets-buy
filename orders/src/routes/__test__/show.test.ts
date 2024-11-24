@@ -1,11 +1,13 @@
 import request from 'supertest';
 import { app } from '../../app';
 import { Ticket } from '../../models/ticket';
+import mongoose from 'mongoose';
 
 it('fetches the order if the user is authorized', async () => {
     const ticket = Ticket.build({ 
         title: 'Concert', 
-        price: 200 
+        price: 200,
+        id: new mongoose.Types.ObjectId().toHexString() 
     });
     await ticket.save();
 
@@ -31,7 +33,8 @@ it('returns a 401 if the user is not authorized to access the order', async () =
     // Create a ticket and order with User 1
     const ticket = Ticket.build({ 
         title: 'Concert', 
-        price: 200 
+        price: 200,
+        id: new mongoose.Types.ObjectId().toHexString() 
     });
     await ticket.save();
 

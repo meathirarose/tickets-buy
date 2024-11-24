@@ -34,7 +34,9 @@ export abstract class Listner<T extends Event> {
         );
 
         subscription.on('message', (msg: Message) => {
+            console.log('message start');
             console.log(`Message Received: ${this.subject} / ${this.queueGroupName}`);
+            console.log('message end');
 
             const parsedData = this.parseMessage(msg);
             this.onMessage(parsedData, msg);
