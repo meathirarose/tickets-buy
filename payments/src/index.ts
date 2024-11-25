@@ -6,7 +6,6 @@ import { OrderCancelledListener } from './events/listeners/order-cancelled-liste
 
 const start = async () => {
 
-    console.log("Starting up from payments...!");
     if(!process.env.JWT_KEY){
         throw new Error('JWT_KEY must be defined!'); 
     }
@@ -46,7 +45,7 @@ const start = async () => {
         new OrderCancelledListener(natsWrapper.client).listen();
 
         await mongoose.connect(process.env.MONGO_URI);
-        console.log('Connected to mongodb..!!');
+        console.log('Connected to mongodb...!!');
     } catch (error) {
         console.error(error);
     }
