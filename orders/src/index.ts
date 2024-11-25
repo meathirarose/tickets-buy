@@ -7,7 +7,6 @@ import { ExpirationCompleteListener } from './events/listeners/expiration-comple
 
 const start = async () => {
 
-    console.log("Starting up from orders....");
     if(!process.env.JWT_KEY){
         throw new Error('JWT_KEY must be defined!'); 
     }
