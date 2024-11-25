@@ -6,7 +6,7 @@ import { OrderCancelledListener } from './events/listeners/order-cancelled-liste
 
 const start = async () => {
 
-    console.log("Starting up from payments...");
+    console.log("Starting up from payments...!");
     if(!process.env.JWT_KEY){
         throw new Error('JWT_KEY must be defined!'); 
     }
